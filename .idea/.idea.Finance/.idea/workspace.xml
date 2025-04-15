@@ -9,216 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c72f5c2-f9c8-468d-b8ad-4d84df832e71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/httpRequests/2025-04-15T090014.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/.devcontainer/devcontainer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/.github/workflows/azure-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/Directory.Build.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/Directory.Packages.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/Finance.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/azure.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/build.cake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/global.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/abbreviations.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/ai/cognitiveservices.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/ai/hub-dependencies.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/ai/hub.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/ai/project.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/config/configstore.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/cosmos-account.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/mongo/cosmos-mongo-account.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/mongo/cosmos-mongo-db.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/sql/cosmos-sql-account.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/sql/cosmos-sql-db.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/sql/cosmos-sql-role-assign.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/cosmos/sql/cosmos-sql-role-def.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/mysql/flexibleserver.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/postgresql/flexibleserver.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/database/sqlserver/sqlserver.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/gateway/apim.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/ai-environment.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/aks-agent-pool.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/aks-managed-cluster.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/aks.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/appservice-appsettings.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/appservice.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/appserviceplan.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/container-app-upsert.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/container-app.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/container-apps-environment.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/container-apps.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/container-registry.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/functions.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/host/staticwebapp.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/monitor/applicationinsights-dashboard.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/monitor/applicationinsights.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/monitor/loganalytics.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/monitor/monitoring.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/networking/cdn-endpoint.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/networking/cdn-profile.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/networking/cdn.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/search/search-services.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/aks-managed-cluster-access.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/configstore-access.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/keyvault-access.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/keyvault-secret.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/keyvault.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/registry-access.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/security/role.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/storage/storage-account.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/core/testing/loadtesting.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/main.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/main.parameters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/infra/services/web.bicep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/AppHost/AppHost.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/AppHost/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/AppHost/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/AppHost/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/AppHost/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Application.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Behaviours/AuthorizationBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Behaviours/LoggingBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Behaviours/PerformanceBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Behaviours/UnhandledExceptionBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Behaviours/ValidationBehaviour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Exceptions/ForbiddenAccessException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Exceptions/ValidationException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Interfaces/IApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Interfaces/IIdentityService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Interfaces/IUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Mappings/MappingExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Models/LookupDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Models/PaginatedList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Models/Result.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/Common/Security/AuthorizeAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Commands/CreateTodoItem/CreateTodoItemCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Commands/DeleteTodoItem/DeleteTodoItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Commands/UpdateTodoItem/UpdateTodoItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Commands/UpdateTodoItem/UpdateTodoItemCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Commands/UpdateTodoItemDetail/UpdateTodoItemDetail.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/EventHandlers/TodoItemCompletedEventHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/EventHandlers/TodoItemCreatedEventHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Queries/GetTodoItemsWithPagination/GetTodoItemsWithPagination.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Queries/GetTodoItemsWithPagination/GetTodoItemsWithPaginationQueryValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoItems/Queries/GetTodoItemsWithPagination/TodoItemBriefDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Commands/CreateTodoList/CreateTodoList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Commands/CreateTodoList/CreateTodoListCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Commands/DeleteTodoList/DeleteTodoList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Commands/PurgeTodoLists/PurgeTodoLists.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Commands/UpdateTodoList/UpdateTodoList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Commands/UpdateTodoList/UpdateTodoListCommandValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Queries/GetTodos/GetTodos.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Queries/GetTodos/TodoItemDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Queries/GetTodos/TodoListDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/TodoLists/Queries/GetTodos/TodosVm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/WeatherForecasts/Queries/GetWeatherForecasts/GetWeatherForecastsQuery.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Application/WeatherForecasts/Queries/GetWeatherForecasts/WeatherForecast.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Common/BaseAuditableEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Common/BaseEntity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Common/BaseEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Common/ValueObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Constants/Policies.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Constants/Roles.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Entities/Board.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Entities/Goal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Entities/Income.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Entities/Payment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Entities/TodoItem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Entities/TodoList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Enums/Periodicity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Enums/PriorityLevel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Events/TodoItemCompletedEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Events/TodoItemCreatedEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Events/TodoItemDeletedEvent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/Exceptions/UnsupportedColourException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Domain/ValueObjects/Colour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/ApplicationDbContextInitialiser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Configurations/BoardConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Configurations/GoalConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Configurations/IncomeConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Configurations/PaymentConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Configurations/TodoItemConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Configurations/TodoListConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Interceptors/AuditableEntityInterceptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Interceptors/DispatchDomainEventsInterceptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Migrations/00000000000000_InitialCreate.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Migrations/00000000000000_InitialCreate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Migrations/20250415064623_addedMainEntities.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Migrations/20250415064623_addedMainEntities.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Identity/ApplicationUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Identity/IdentityResultExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Identity/IdentityService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/ServiceDefaults/Extensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/ServiceDefaults/ServiceDefaults.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/DependencyInjection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Endpoints/TodoItems.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Endpoints/TodoLists.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Endpoints/Users.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Endpoints/WeatherForecasts.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Infrastructure/CustomExceptionHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Infrastructure/EndpointGroupBase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Infrastructure/IEndpointRouteBuilderExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Infrastructure/MethodInfoExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Infrastructure/WebApplicationExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Properties/launchSettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Services/CurrentUser.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Web.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/Web.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/appsettings.Development.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/config.nswag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/wwwroot/api/specification.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/src/Web/wwwroot/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/Application.FunctionalTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/BaseTestFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/CustomWebApplicationFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/ITestDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/PostgreSQLTestDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/PostgreSQLTestcontainersTestDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TestDatabaseFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/Testing.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoItems/Commands/CreateTodoItemTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoItems/Commands/DeleteTodoItemTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoItems/Commands/UpdateTodoItemDetailTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoItems/Commands/UpdateTodoItemTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoLists/Commands/CreateTodoListTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoLists/Commands/DeleteTodoListTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoLists/Commands/PurgeTodoListsTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoLists/Commands/UpdateTodoListTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/TodoLists/Queries/GetTodosTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.FunctionalTests/appsettings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.UnitTests/Application.UnitTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.UnitTests/Common/Behaviours/RequestLoggerTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.UnitTests/Common/Exceptions/ValidationExceptionTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Application.UnitTests/Common/Mappings/MappingTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Domain.UnitTests/Domain.UnitTests.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Domain.UnitTests/ValueObjects/ColourTests.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Infrastructure.IntegrationTests/GlobalUsings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Finance/tests/Infrastructure.IntegrationTests/Infrastructure.IntegrationTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Finance/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,23 +33,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Web: Finance.Web.executor": "Debug",
-    "HTTP Request.Web | #2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Web: Finance.Web.executor&quot;: &quot;Debug&quot;,
+    &quot;HTTP Request.Web | #2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Web: Finance.Web">
     <configuration name="Web | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/Finance/src/Web/Web.http" executionIdentifier="#2" index="2" runType="Run single request">
       <method v="2" />
@@ -308,8 +99,17 @@
       <option name="presentableId" value="Default" />
       <updated>1744695396619</updated>
       <workItem from="1744695398185" duration="4258000" />
-      <workItem from="1744700198085" duration="1603000" />
+      <workItem from="1744700198085" duration="2023000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: init with main entities.">
+      <option name="closed" value="true" />
+      <created>1744711625799</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744711625799</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,5 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat: init with main entities." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: init with main entities." />
   </component>
 </project>
