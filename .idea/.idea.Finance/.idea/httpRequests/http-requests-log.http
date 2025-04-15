@@ -1,0 +1,17 @@
+POST https://localhost:5001/api/Users/Login
+Content-Type: application/json
+Content-Length: 73
+User-Agent: IntelliJ HTTP Client/JetBrains Rider 2024.3.7
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+x-http2-scheme: https
+
+{
+  "email": "administrator@localhost",
+  "password": "Administrator1!"
+}
+
+<> 2025-04-15T090014.200.json
+
+###
+
