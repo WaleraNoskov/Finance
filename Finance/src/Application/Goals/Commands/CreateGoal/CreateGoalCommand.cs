@@ -9,7 +9,7 @@ public class CreateGoalCommand : IRequest<int>
     public decimal Amount { get; set; }
     public DateOnly DeadLineDate { get; set; }
     public int BoardId { get; set; }
-    public int OwnerUserId { get; set; }
+    public string? OwnerUserId { get; set; }
 }
 
 public class CreateGoalCommandHandler(IApplicationDbContext context) : IRequestHandler<CreateGoalCommand, int>
