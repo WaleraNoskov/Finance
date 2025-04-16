@@ -7,5 +7,5 @@ public class Board : BaseAuditableEntity
     public ICollection<Payment>? Payments { get; set; }
     public ICollection<Goal>? Goals { get; set; }
     
-    public ICollection<int> UserIds { get; set; } = new List<int>();
+    public ICollection<string> UserIds { get; set; } = new List<string>();
 }

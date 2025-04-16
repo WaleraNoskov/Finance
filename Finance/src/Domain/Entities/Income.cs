@@ -12,5 +12,5 @@ public class Income : BaseAuditableEntity
     public int BoardId { get; set; }
     [ForeignKey("BoardId")] public Board? Board { get; set; }
     
-    public int? SourceUserId { get; set; }
+    public string? SourceUserId { get; set; }
 }

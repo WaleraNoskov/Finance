@@ -12,5 +12,5 @@ public class Goal : BaseAuditableEntity
     public int BoardId { get; set; }
     [ForeignKey("BoardId")] public Board? Board { get; set; }
     
-    public int? OwnerUserId { get; set; }
+    public string? OwnerUserId { get; set; }
 }

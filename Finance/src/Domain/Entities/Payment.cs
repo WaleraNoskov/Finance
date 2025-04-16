@@ -15,5 +15,5 @@ public class Payment : BaseAuditableEntity
     public int IncomeId { get; set; }
     [ForeignKey("IncomeId")] public Income? Income { get; set; }
     
-    public int? UserId { get; set; }
+    public string? UserId { get; set; }
 }
