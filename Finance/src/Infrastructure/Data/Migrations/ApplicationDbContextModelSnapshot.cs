@@ -30,6 +30,9 @@ namespace Finance.Infrastructure.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.PrimitiveCollection<string[]>("AdminIds")
+                        .HasColumnType("text[]");
+
                     b.Property<DateTimeOffset>("Created")
                         .HasColumnType("timestamp with time zone");
 
@@ -47,9 +50,8 @@ namespace Finance.Infrastructure.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.PrimitiveCollection<int[]>("UserIds")
-                        .IsRequired()
-                        .HasColumnType("integer[]");
+                    b.PrimitiveCollection<string[]>("UserIds")
+                        .HasColumnType("text[]");
 
                     b.HasKey("Id");
 
@@ -90,8 +92,8 @@ namespace Finance.Infrastructure.Data.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<int?>("OwnerUserId")
-                        .HasColumnType("integer");
+                    b.Property<string>("OwnerUserId")
+                        .HasColumnType("text");
 
                     b.Property<decimal>("PaidAmount")
                         .HasColumnType("numeric");
@@ -140,8 +142,8 @@ namespace Finance.Infrastructure.Data.Migrations
                     b.Property<int>("Periodicity")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("SourceUserId")
-                        .HasColumnType("integer");
+                    b.Property<string>("SourceUserId")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -190,8 +192,8 @@ namespace Finance.Infrastructure.Data.Migrations
                     b.Property<int>("Periodicity")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("integer");
+                    b.Property<string>("UserId")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
