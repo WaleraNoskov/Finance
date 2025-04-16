@@ -4,12 +4,12 @@ using Finance.Domain.Entities;
 
 namespace Finance.Application.FunctionalTests.Boards.Commands;
 
-public class CreateBoardTests
+public class CreateBoardTests : BaseTestFixture
 {
     [Test]
     public async Task ShouldRequireMinimumFields()
     {
-        var command = new CreateBoardCommand();
+        var command = new CreateBoardCommand("", "");
 
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -19,8 +19,8 @@ public class CreateBoardTests
     [Test]
     public async Task ShouldRequireCurrentUser()
     {
-        var command = new CreateBoardCommand() { Name = "Test", CurrentUserId = null };
-        
+        var command = new CreateBoardCommand("Test", "");
+
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
             .Should().ThrowAsync<ValidationException>();
@@ -31,7 +31,7 @@ public class CreateBoardTests
     {
         var userId = await Testing.RunAsDefaultUserAsync();
 
-        var command = new CreateBoardCommand { Name = "Test Board", CurrentUserId = userId };
+        var command = new CreateBoardCommand("Test Board", userId);
         var id = await Testing.SendAsync(command);
         var item = await Testing.FindAsync<Board>(id);
 

@@ -1,3 +1,4 @@
+using Finance.Application;
 using Finance.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);

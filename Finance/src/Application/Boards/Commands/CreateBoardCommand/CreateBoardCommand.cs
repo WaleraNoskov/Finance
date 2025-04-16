@@ -3,13 +3,7 @@ using Finance.Domain.Entities;
 
 namespace Finance.Application.Boards.Commands.CreateBoardCommand;
 
-public class CreateBoardCommand : IRequest<int>
-{
-    public string? Name { get; set; }
-    
-    public string? CurrentUserId { get; set; }
-}
-
+public record CreateBoardCommand(string Name, string CurrentUserId) : IRequest<int>;
 public class CreateBoardCommandHandler(IApplicationDbContext context) : IRequestHandler<CreateBoardCommand, int>
 {
     public async Task<int> Handle(CreateBoardCommand request, CancellationToken cancellationToken)
@@ -17,10 +11,10 @@ public class CreateBoardCommandHandler(IApplicationDbContext context) : IRequest
         var entity = new Board { Name = request.Name };
         
         entity.UserIds ??= new List<string>();
-        entity.UserIds.Add(request.CurrentUserId ?? string.Empty);
+        entity.UserIds.Add(request.CurrentUserId);
         
         entity.AdminIds ??= new List<string>();
-        entity.AdminIds.Add(request.CurrentUserId ?? string.Empty);
+        entity.AdminIds.Add(request.CurrentUserId);
         
         context.Boards.Add(entity);
         
