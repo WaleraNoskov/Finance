@@ -1,5 +1,6 @@
 ﻿using Finance.Application.Boards.Commands.CreateBoardCommand;
 using Finance.Application.Boards.Commands.DeleteBoardCommand;
+using Finance.Application.Common.Exceptions;
 using Finance.Domain.Entities;
 
 namespace Finance.Application.FunctionalTests.Boards.Commands;
@@ -37,5 +38,15 @@ public class DeleteBoardTests : BaseTestFixture
         var anotherUserId = await Testing.RunAsUserAsync("user2", "User2!", []);
         
         await FluentActions.Invoking(() => Testing.SendAsync(new DeleteBoardCommand(boardId, anotherUserId))).Should().ThrowAsync<UnauthorizedAccessException>();
+    }
+    
+    [Test]
+    public async Task ShouldRequireCurrentUser()
+    {
+        var userId = await Testing.RunAsUserAsync("user1", "User1!", []);
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board", userId));
+        
+        await FluentActions.Invoking(() => Testing.SendAsync(new DeleteBoardCommand(boardId, "")))
+            .Should().ThrowAsync<ValidationException>();
     }
 }
