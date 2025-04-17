@@ -3,19 +3,18 @@ using Finance.Domain.Entities;
 
 namespace Finance.Application.Goals.Commands.CreateGoal;
 
-public class CreateGoalCommand : IRequest<int>
-{
-    public string? Name { get; set; }
-    public decimal Amount { get; set; }
-    public DateOnly DeadLineDate { get; set; }
-    public int BoardId { get; set; }
-    public string? OwnerUserId { get; set; }
-}
+public record CreateGoalCommand(string CurrentUser, string Name, decimal Amount, DateOnly DeadLineDate, int BoardId, string? OwnerUserId) : IRequest<int>;
 
 public class CreateGoalCommandHandler(IApplicationDbContext context) : IRequestHandler<CreateGoalCommand, int>
 {
     public async Task<int> Handle(CreateGoalCommand request, CancellationToken cancellationToken)
     {
+        var board = await context.Boards.FindAsync([request.BoardId], cancellationToken);
+        Guard.Against.NotFound(request.BoardId, board, "Board not found");
+        
+        if (!board.UserIds!.Contains(request.CurrentUser))
+            throw new UnauthorizedAccessException();
+        
         var entity = new Goal
         {
             Name = request.Name,
