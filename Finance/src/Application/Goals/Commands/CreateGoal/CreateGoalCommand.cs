@@ -5,7 +5,7 @@ namespace Finance.Application.Goals.Commands.CreateGoal;
 
 public record CreateGoalCommand(string CurrentUser, string Name, decimal Amount, DateOnly DeadLineDate, int BoardId, string? OwnerUserId) : IRequest<int>;
 
-public class CreateGoalCommandHandler(IApplicationDbContext context) : IRequestHandler<CreateGoalCommand, int>
+public class CreateGoalCommandHandler(IApplicationDbContext context, IIdentityService identityService) : IRequestHandler<CreateGoalCommand, int>
 {
     public async Task<int> Handle(CreateGoalCommand request, CancellationToken cancellationToken)
     {
@@ -14,6 +14,9 @@ public class CreateGoalCommandHandler(IApplicationDbContext context) : IRequestH
         
         if (!board.UserIds!.Contains(request.CurrentUser))
             throw new UnauthorizedAccessException();
+        
+        if(request.OwnerUserId != null && await identityService.UserExists(request.OwnerUserId) != true)
+            throw new NotFoundException(request.OwnerUserId, "User not found");
         
         var entity = new Goal
         {
