@@ -1,5 +1,6 @@
 ﻿using Finance.Application.Common.Interfaces;
 using Finance.Domain.Entities;
+using ValidationException = Finance.Application.Common.Exceptions.ValidationException;
 
 namespace Finance.Application.Goals.Commands.CreateGoal;
 
@@ -14,6 +15,9 @@ public class CreateGoalCommandHandler(IApplicationDbContext context, IIdentitySe
         
         if (!board.UserIds!.Contains(request.CurrentUser))
             throw new UnauthorizedAccessException();
+        
+        if(request.OwnerUserId != null && !board.UserIds!.Contains(request.OwnerUserId))
+            throw new UnauthorizedAccessException("User to add is non allowed to board.");
         
         if(request.OwnerUserId != null && await identityService.UserExists(request.OwnerUserId) != true)
             throw new NotFoundException(request.OwnerUserId, "User not found");
