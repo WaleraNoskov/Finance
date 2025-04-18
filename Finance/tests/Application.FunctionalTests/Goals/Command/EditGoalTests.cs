@@ -12,7 +12,7 @@ public class EditGoalTests : BaseTestFixture
     [Test]
     public async Task ShouldRequireMinimumFields()
     {
-        var command = new EditGoalCommand(0, "", "", 0, null);
+        var command = new EditGoalCommand(0, "", 0, null);
     
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -24,7 +24,7 @@ public class EditGoalTests : BaseTestFixture
     {
         var userId = await Testing.RunAsDefaultUserAsync();
         
-        var command = new EditGoalCommand(0, userId, "Test", 0, null);
+        var command = new EditGoalCommand(0, "Test", 0, null);
         
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -39,7 +39,7 @@ public class EditGoalTests : BaseTestFixture
         var goalId = await Testing.SendAsync(new CreateGoalCommand(userId, "Test Goal", 0, DateOnly.MinValue, boardId, null));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
         
-        var command = new EditGoalCommand(goalId, anotherUserId, "Test Goal 2", 0, anotherUserId);
+        var command = new EditGoalCommand(goalId, "Test Goal 2", 0, anotherUserId);
     
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -66,8 +66,9 @@ public class EditGoalTests : BaseTestFixture
         var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
         var goalId = await Testing.SendAsync(new CreateGoalCommand(userId, "Test Goal", 0, DateOnly.MinValue, boardId, null));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
-        
-        await Testing.SendAsync(new EditGoalCommand(goalId, userId, "Test Goal 2", 22, anotherUserId));
+        userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
+
+        await Testing.SendAsync(new EditGoalCommand(goalId, "Test Goal 2", 22, anotherUserId));
 
         var goal = await Testing.FindAsync<Goal>(goalId);
         goal.Should().NotBeNull();

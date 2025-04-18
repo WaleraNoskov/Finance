@@ -65,9 +65,17 @@ public partial class Testing
 
         var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
 
-        var user = new ApplicationUser { UserName = userName, Email = userName };
+        var user = await userManager.FindByNameAsync(userName);
 
+        if (user is not null)
+        {
+            _userId = user.Id;
+            return _userId;
+        }
+
+        user = new ApplicationUser { UserName = userName, Email = userName };
         var result = await userManager.CreateAsync(user, password);
+
 
         if (roles.Any())
         {
@@ -87,6 +95,7 @@ public partial class Testing
 
             return _userId;
         }
+
 
         var errors = string.Join(Environment.NewLine, result.ToApplicationResult().Errors);
 
