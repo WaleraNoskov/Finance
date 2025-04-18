@@ -7,8 +7,5 @@ public class EditBoardCommandValidator : AbstractValidator<EditBoardCommand>
         RuleFor(x => x.Name)
             .MaximumLength(100)
             .NotEmpty();
-        
-        RuleFor(x => x.CurrentUserId)
-            .NotEmpty();
     }
 }

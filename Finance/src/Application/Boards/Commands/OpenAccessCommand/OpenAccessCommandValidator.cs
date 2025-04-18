@@ -4,7 +4,6 @@ public class OpenAccessCommandValidator : AbstractValidator<OpenAccessCommand>
 {
     public OpenAccessCommandValidator()
     {
-        RuleFor(x => x.CurrentUserId)
-            .NotEmpty();
+        
     }
 }

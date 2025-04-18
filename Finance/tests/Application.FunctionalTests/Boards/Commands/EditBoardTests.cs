@@ -9,7 +9,7 @@ public class EditBoardTests : BaseTestFixture
     [Test]
     public async Task ShouldRequireMinimumFields()
     {
-        var command = new EditBoardCommand(0, "", "");
+        var command = new EditBoardCommand(0, "");
 
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -20,11 +20,11 @@ public class EditBoardTests : BaseTestFixture
     public async Task ShouldRequireValidCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test"));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
         
 
-        await FluentActions.Invoking(() => Testing.SendAsync(new EditBoardCommand(boardId, anotherUserId, "Test edited")))
+        await FluentActions.Invoking(() => Testing.SendAsync(new EditBoardCommand(boardId, anotherUserId)))
             .Should().ThrowAsync<UnauthorizedAccessException>();
     }
     
@@ -32,9 +32,9 @@ public class EditBoardTests : BaseTestFixture
     public async Task ShouldRequireCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("user1", "User1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board"));
         
-        await FluentActions.Invoking(() => Testing.SendAsync(new EditBoardCommand(boardId, "", "Test edited")))
+        await FluentActions.Invoking(() => Testing.SendAsync(new EditBoardCommand(boardId, "")))
             .Should().ThrowAsync<ValidationException>();
     }
 }

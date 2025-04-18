@@ -2,9 +2,9 @@
 
 namespace Finance.Application.Boards.Commands.OpenAccessCommand;
 
-public record OpenAccessCommand(int Id, string UserId, string CurrentUserId) : IRequest;
+public record OpenAccessCommand(int Id, string UserId) : IRequest;
 
-public class OpenAccessCommandHandler(IApplicationDbContext context) : IRequestHandler<OpenAccessCommand>
+public class OpenAccessCommandHandler(IApplicationDbContext context, IIdentityService identityService, IUser user) : IRequestHandler<OpenAccessCommand>
 {
     public async Task Handle(OpenAccessCommand request, CancellationToken cancellationToken)
     {
@@ -12,7 +12,9 @@ public class OpenAccessCommandHandler(IApplicationDbContext context) : IRequestH
             .FindAsync([request.Id], cancellationToken);
         
         Guard.Against.NotFound(request.Id, entity);
-        if(!entity.AdminIds!.Contains(request.CurrentUserId))
+        if(await identityService.UserExists(request.UserId) == false)
+            throw new NotFoundException(request.UserId, nameof(user));
+        if(user?.Id is null || !entity.AdminIds!.Contains(user.Id))
             throw new UnauthorizedAccessException();
         
         entity.UserIds!.Add(request.UserId);

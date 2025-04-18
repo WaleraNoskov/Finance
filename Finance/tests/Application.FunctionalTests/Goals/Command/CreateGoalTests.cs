@@ -33,7 +33,7 @@ public class CreateGoalTests : BaseTestFixture
     public async Task ShouldRequireValidCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board"));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
 
         var command = new CreateGoalCommand("Test", 0, DateOnly.MinValue, boardId, null);
@@ -48,7 +48,7 @@ public class CreateGoalTests : BaseTestFixture
     public async Task ShouldRequireValidOwnerUser()
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board"));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
 
         var command = new CreateGoalCommand("Test", 0, DateOnly.MinValue, boardId, anotherUserId);
@@ -63,8 +63,8 @@ public class CreateGoalTests : BaseTestFixture
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
-        await Testing.SendAsync(new OpenAccessCommand(boardId, anotherUserId, userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board"));
+        await Testing.SendAsync(new OpenAccessCommand(boardId, anotherUserId));
 
         var command = new CreateGoalCommand("Test", 52, new DateOnly(2022, 1, 1), boardId, anotherUserId);
         var goalId = await Testing.SendAsync(command);

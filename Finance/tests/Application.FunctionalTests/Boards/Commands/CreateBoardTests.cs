@@ -9,7 +9,7 @@ public class CreateBoardTests : BaseTestFixture
     [Test]
     public async Task ShouldRequireMinimumFields()
     {
-        var command = new CreateBoardCommand("", "");
+        var command = new CreateBoardCommand( "");
 
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -19,11 +19,11 @@ public class CreateBoardTests : BaseTestFixture
     [Test]
     public async Task ShouldRequireCurrentUser()
     {
-        var command = new CreateBoardCommand("Test", "");
+        var command = new CreateBoardCommand( "Name");
 
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
-            .Should().ThrowAsync<ValidationException>();
+            .Should().ThrowAsync<UnauthorizedAccessException>();
     }
 
     [Test]
@@ -31,7 +31,7 @@ public class CreateBoardTests : BaseTestFixture
     {
         var userId = await Testing.RunAsDefaultUserAsync();
 
-        var command = new CreateBoardCommand("Test Board", userId);
+        var command = new CreateBoardCommand("Test Board");
         var id = await Testing.SendAsync(command);
         var item = await Testing.FindAsync<Board>(id);
 

@@ -8,9 +8,5 @@ public class CreateBoardCommandValidator : AbstractValidator<CreateBoardCommand>
             .MaximumLength(100)
             .NotNull()
             .NotEmpty();
-        
-        RuleFor(x => x.CurrentUserId)
-            .NotEmpty()
-            .NotNull();
     }
 }

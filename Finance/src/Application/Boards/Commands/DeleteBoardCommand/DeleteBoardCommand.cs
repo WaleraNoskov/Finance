@@ -2,9 +2,9 @@
 
 namespace Finance.Application.Boards.Commands.DeleteBoardCommand;
 
-public record DeleteBoardCommand(int Id, string CurrentUserId) : IRequest;
+public record DeleteBoardCommand(int Id) : IRequest;
 
-public class DeleteBoardCommandHandler(IApplicationDbContext context) : IRequestHandler<DeleteBoardCommand>
+public class DeleteBoardCommandHandler(IApplicationDbContext context, IUser user) : IRequestHandler<DeleteBoardCommand>
 {
     public async Task Handle(DeleteBoardCommand request, CancellationToken cancellationToken)
     {
@@ -12,7 +12,7 @@ public class DeleteBoardCommandHandler(IApplicationDbContext context) : IRequest
             .FindAsync([request.Id], cancellationToken);
 
         Guard.Against.NotFound(request.Id, entity);
-        if(!entity.AdminIds!.Contains(request.CurrentUserId))
+        if(user?.Id is null || !entity.AdminIds!.Contains(user.Id))
             throw new UnauthorizedAccessException();
 
         context.Boards.Remove(entity);

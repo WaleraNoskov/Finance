@@ -12,7 +12,7 @@ public class DeleteBoardTests : BaseTestFixture
     {
         var userId = await Testing.RunAsDefaultUserAsync();
         
-        var command = new DeleteBoardCommand(99, userId);
+        var command = new DeleteBoardCommand(99);
 
         await FluentActions.Invoking(() =>
             Testing.SendAsync(command)).Should().ThrowAsync<NotFoundException>();
@@ -22,9 +22,9 @@ public class DeleteBoardTests : BaseTestFixture
     public async Task ShouldDeleteTodoItem()
     {
         var userId = await Testing.RunAsDefaultUserAsync();
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Name", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Name"));
 
-        await Testing.SendAsync(new DeleteBoardCommand(boardId, userId));
+        await Testing.SendAsync(new DeleteBoardCommand(boardId));
 
         var board = await Testing.FindAsync<Board>(boardId);
         board.Should().BeNull();
@@ -34,19 +34,20 @@ public class DeleteBoardTests : BaseTestFixture
     public async Task ShouldRequireValidCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("user1", "User1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board"));
         var anotherUserId = await Testing.RunAsUserAsync("user2", "User2!", []);
         
-        await FluentActions.Invoking(() => Testing.SendAsync(new DeleteBoardCommand(boardId, anotherUserId))).Should().ThrowAsync<UnauthorizedAccessException>();
+        await FluentActions.Invoking(() => Testing.SendAsync(new DeleteBoardCommand(boardId))).Should().ThrowAsync<UnauthorizedAccessException>();
     }
     
     [Test]
     public async Task ShouldRequireCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("user1", "User1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board"));
+        var anotherUserId = await Testing.RunAsUserAsync("user2", "User2!", []);
         
-        await FluentActions.Invoking(() => Testing.SendAsync(new DeleteBoardCommand(boardId, "")))
-            .Should().ThrowAsync<ValidationException>();
+        await FluentActions.Invoking(() => Testing.SendAsync(new DeleteBoardCommand(boardId)))
+            .Should().ThrowAsync<UnauthorizedAccessException>();
     }
 }

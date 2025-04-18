@@ -13,7 +13,7 @@ public class CreateGoalCommandHandler(IApplicationDbContext context, IIdentitySe
         var board = await context.Boards.FindAsync([request.BoardId], cancellationToken);
         Guard.Against.NotFound(request.BoardId, board, "Board not found");
         
-        if (user is null || user is not null && !board.UserIds!.Contains(user.Id!))
+        if (user?.Id is null || user is not null && !board.UserIds!.Contains(user.Id!))
             throw new UnauthorizedAccessException();
         
         if(request.OwnerUserId != null && !board.UserIds!.Contains(request.OwnerUserId))

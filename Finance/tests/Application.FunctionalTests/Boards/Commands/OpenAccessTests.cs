@@ -11,10 +11,11 @@ public class OpenAccessTests : BaseTestFixture
     public async Task ShouldOpenAccess()
     {
         var userId = await Testing.RunAsUserAsync("User", "Password1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Name", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Name"));
         var userToAddId = await Testing.RunAsUserAsync("UserToAdd", "Password1!", []);
+        await Testing.RunAsUserAsync("User", "Password1!", []);
 
-        await Testing.SendAsync(new OpenAccessCommand(boardId, userToAddId, userId));
+        await Testing.SendAsync(new OpenAccessCommand(boardId, userToAddId));
         
         var board = await Testing.FindAsync<Board>(boardId);
         board.Should().NotBeNull();
@@ -26,11 +27,11 @@ public class OpenAccessTests : BaseTestFixture
     public async Task ShouldRequireValidCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test"));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
         
 
-        await FluentActions.Invoking(() => Testing.SendAsync(new OpenAccessCommand(boardId, anotherUserId, anotherUserId)))
+        await FluentActions.Invoking(() => Testing.SendAsync(new OpenAccessCommand(boardId, anotherUserId)))
             .Should().ThrowAsync<UnauthorizedAccessException>();
     }
     
@@ -38,9 +39,10 @@ public class OpenAccessTests : BaseTestFixture
     public async Task ShouldRequireCurrentUser()
     {
         var userId = await Testing.RunAsUserAsync("user1", "User1!", []);
-        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board", userId));
+        var boardId = await Testing.SendAsync(new CreateBoardCommand("Test board"));
+        var anotherUserId = await Testing.RunAsUserAsync("user2", "User2!", []);
         
-        await FluentActions.Invoking(() => Testing.SendAsync(new OpenAccessCommand(boardId, "Test Id, not mutter", "")))
-            .Should().ThrowAsync<ValidationException>();
+        await FluentActions.Invoking(() => Testing.SendAsync(new OpenAccessCommand(boardId, anotherUserId)))
+            .Should().ThrowAsync<UnauthorizedAccessException>();
     }
 }

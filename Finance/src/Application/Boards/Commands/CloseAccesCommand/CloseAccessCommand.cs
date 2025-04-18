@@ -2,9 +2,9 @@
 
 namespace Finance.Application.Boards.Commands.CloseAccesCommand;
 
-public record CloseAccessCommand(int Id, string UserId, string CurrentUserId) : IRequest;
+public record CloseAccessCommand(int Id, string UserId) : IRequest;
 
-public class CloseAccessCommandHandler(IApplicationDbContext context) : IRequestHandler<CloseAccessCommand>
+public class CloseAccessCommandHandler(IApplicationDbContext context, IUser user) : IRequestHandler<CloseAccessCommand>
 {
     public async Task Handle(CloseAccessCommand request, CancellationToken cancellationToken)
     {
@@ -12,7 +12,7 @@ public class CloseAccessCommandHandler(IApplicationDbContext context) : IRequest
             .FindAsync([request.Id], cancellationToken);
         
         Guard.Against.NotFound(request.Id, entity);
-        if(!entity.AdminIds!.Contains(request.CurrentUserId))
+        if(user?.Id is null || !entity.AdminIds!.Contains(user.Id))
             throw new UnauthorizedAccessException();
         if(!entity.UserIds!.Contains(request.UserId))
             throw new ArgumentException("User cannot access this board.");
