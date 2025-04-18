@@ -4,16 +4,16 @@ using ValidationException = Finance.Application.Common.Exceptions.ValidationExce
 
 namespace Finance.Application.Goals.Commands.CreateGoal;
 
-public record CreateGoalCommand(string CurrentUser, string Name, decimal Amount, DateOnly DeadLineDate, int BoardId, string? OwnerUserId) : IRequest<int>;
+public record CreateGoalCommand(string Name, decimal Amount, DateOnly DeadLineDate, int BoardId, string? OwnerUserId) : IRequest<int>;
 
-public class CreateGoalCommandHandler(IApplicationDbContext context, IIdentityService identityService) : IRequestHandler<CreateGoalCommand, int>
+public class CreateGoalCommandHandler(IApplicationDbContext context, IIdentityService identityService, IUser user) : IRequestHandler<CreateGoalCommand, int>
 {
     public async Task<int> Handle(CreateGoalCommand request, CancellationToken cancellationToken)
     {
         var board = await context.Boards.FindAsync([request.BoardId], cancellationToken);
         Guard.Against.NotFound(request.BoardId, board, "Board not found");
         
-        if (!board.UserIds!.Contains(request.CurrentUser))
+        if (user is null || user is not null && !board.UserIds!.Contains(user.Id!))
             throw new UnauthorizedAccessException();
         
         if(request.OwnerUserId != null && !board.UserIds!.Contains(request.OwnerUserId))

@@ -14,7 +14,7 @@ public class EditGoalCommandHandler(IApplicationDbContext context, IIdentityServ
         
         Guard.Against.NotFound(request.Id, entity, "Goal not found");
         
-        if (user.Id is null || !entity.Board!.UserIds!.Contains(user.Id))
+        if (user is null || user is not null && !entity.Board!.UserIds!.Contains(user.Id!))
             throw new UnauthorizedAccessException();
         
         if(request.OwnerUserId != null && await identityService.UserExists(request.OwnerUserId) == false)

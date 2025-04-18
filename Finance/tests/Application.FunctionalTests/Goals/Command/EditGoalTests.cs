@@ -36,7 +36,7 @@ public class EditGoalTests : BaseTestFixture
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
         var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
-        var goalId = await Testing.SendAsync(new CreateGoalCommand(userId, "Test Goal", 0, DateOnly.MinValue, boardId, null));
+        var goalId = await Testing.SendAsync(new CreateGoalCommand( "Test Goal", 0, DateOnly.MinValue, boardId, null));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
         
         var command = new EditGoalCommand(goalId, "Test Goal 2", 0, anotherUserId);
@@ -52,7 +52,7 @@ public class EditGoalTests : BaseTestFixture
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
         var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
         
-        var command = new CreateGoalCommand(userId, "Test", 0, DateOnly.MinValue, boardId, "123, not mutters");
+        var command = new CreateGoalCommand("Test", 0, DateOnly.MinValue, boardId, "123, not mutters");
         
         await FluentActions
             .Invoking(() => Testing.SendAsync(command))
@@ -64,7 +64,7 @@ public class EditGoalTests : BaseTestFixture
     {
         var userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
         var boardId = await Testing.SendAsync(new CreateBoardCommand("Test Board", userId));
-        var goalId = await Testing.SendAsync(new CreateGoalCommand(userId, "Test Goal", 0, DateOnly.MinValue, boardId, null));
+        var goalId = await Testing.SendAsync(new CreateGoalCommand("Test Goal", 0, DateOnly.MinValue, boardId, null));
         var anotherUserId = await Testing.RunAsUserAsync("User2", "Password2!", []);
         userId = await Testing.RunAsUserAsync("User1", "Password1!", []);
 
