@@ -1,4 +1,6 @@
 ﻿using Finance.Application.Boards.Commands.CreateBoardCommand;
+using Finance.Application.Boards.Queries.GetBoards;
+using Finance.Application.Common.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Finance.Web.Endpoints;
@@ -9,7 +11,8 @@ public class Boards : EndpointGroupBase
     {
         app.MapGroup(this)
             .RequireAuthorization()
-            .MapPost(Create);
+            .MapPost(Create)
+            .MapGet(GetBoardsWithPagination);
         // .MapGet(GetTodoItemsWithPagination)
         // .MapPost(CreateTodoItem)
         // .MapPut(UpdateTodoItem, "{id}")
@@ -22,5 +25,13 @@ public class Boards : EndpointGroupBase
         var id = await sender.Send(command);
         
         return TypedResults.Created($"/{nameof(Boards)}/{id}", id);
+    }
+    
+    public async Task<Ok<PaginatedList<BoardBriefDto>>> GetBoardsWithPagination(ISender sender,
+        [AsParameters] GetBoardsWithPagination query)
+    {
+        var result = await sender.Send(query);
+
+        return TypedResults.Ok(result);
     }
 }

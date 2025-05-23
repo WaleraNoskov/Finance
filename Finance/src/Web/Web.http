@@ -3,7 +3,7 @@
 
 @Email=administrator@localhost
 @Password=Administrator1!
-@BearerToken=<YourToken>
+@BearerToken=CfDJ8ElZzUam-odLmd6XwJWp5WpOEPoXfWLA7QhiFM8GHarSRgsjgkhTNtt2WuXP0QYrHnSoFepZmlv2PVSKzcTO2CCbfvb8-7McB5ox0iMtxyXPLNoUcY7RJN8m1zFjLUyJhqy4oWs_0YuD1rmrI_YkN3_omfsazm8GDZdlQaJhqtg-8ZjmOK1ajWRtdrmR2FITrjZG7ZyoPX32yGWUKAITofp2Me2IZ_FLJTMJj5wtB8IWm9QsM-59IkP7VZUe7olW8r1-45LqfBUF8YBlktXIcOKExk5xzy8m5AAXy8D9tqebTFWrbMEDQfX4BeO94G4PzKY9CPqoaPkDvuO8OlEz2LBxinppRc3BHm_MlH3F7WNcdQ-bcsCMJn-1S72Qas67JRTM22up_Z1pg5Eq-tgkDwL3aBAWCy8HW-_nRqeexkE0WaHp0x8vtPMy6BqpmDgRdE057jpxg2jsevThd7zig077GlfYovWjn4gJ3sLkqEVYAb3RqX8e_epWFgmI2pil5ZYz1W346wxYD6W_JnDPd08KWLKYdBrkThhwTo2s-lLcuAuvcUY-C3F8KzCrK2AJdPcknfoRmRDMMNwF3WhUWDUoP0QwgL-Mt260HqD5QGwW_CTTCbRZUNc5FdxSzJikwLPzLpdb2vjFQGa76BOuet-fEeWraG0Mb5DvLRZq6gi4HCisYGiZnrylvFkEOuoL6yTjcgLMXfyuDiigSr8qxEaI3wwLd6caiO9tDUGja2eWumKXDgHAL8TONgNu8nQ-J9t8P4n-8xCJLcKUUlMGANtJR2Hb9Qb-68u1ujxbuJ69RYvZH82ObVOkWN3bmKjAjneiT63eTmk0BoRL001wJ-w
 
 # POST Users Register
 POST {{Web_HostAddress}}/api/Users/Register
@@ -134,6 +134,25 @@ Content-Type: application/json
 
 # DELETE TodoItem
 DELETE {{Web_HostAddress}}/api/TodoItems/1
+Authorization: Bearer {{BearerToken}}
+
+###
+
+# POST Boards
+POST {{Web_HostAddress}}/api/Boards
+Authorization: Bearer {{BearerToken}}
+Content-Type: application/json
+
+// CreateTodoItemCommand
+{
+  "Name": "Home board"
+}
+
+###
+
+# GET TodoItems
+GET {{Web_HostAddress}}/api/Boards?PageNumber={{PageNumber}}&PageSize={{PageSize}}
+
 Authorization: Bearer {{BearerToken}}
 
 ###
