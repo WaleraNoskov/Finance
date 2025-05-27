@@ -2,11 +2,11 @@
 
 namespace Finance.Application.Boards.Commands.EditCommand;
 
-public record EditBoardCommand(int Id, string Name) : IRequest;
+public record UpdateBoardCommand(int Id, string Name) : IRequest;
 
-public class EditBoardCommandHandler(IApplicationDbContext context, IUser user) : IRequestHandler<EditBoardCommand>
+public class EditBoardCommandHandler(IApplicationDbContext context, IUser user) : IRequestHandler<UpdateBoardCommand>
 {
-    public async Task Handle(EditBoardCommand request, CancellationToken cancellationToken)
+    public async Task Handle(UpdateBoardCommand request, CancellationToken cancellationToken)
     {
         var entity = await context.Boards.FindAsync([request.Id], cancellationToken);
 

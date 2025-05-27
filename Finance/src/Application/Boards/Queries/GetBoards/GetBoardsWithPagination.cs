@@ -22,7 +22,7 @@ public class GetBoardsWithPaginationQueryHandler(IApplicationDbContext context, 
             throw new UnauthorizedAccessException();
         
         return await context.Boards
-            .Include(b => b.UserIds)
+            //.Include(b => b.UserIds)
             .Where(b => b.UserIds != null && b.UserIds.Contains(user.Id))
             .OrderBy(b => b.Name)
             .ProjectTo<BoardBriefDto>(mapper.ConfigurationProvider)

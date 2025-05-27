@@ -1,6 +1,6 @@
 ﻿namespace Finance.Application.Boards.Commands.EditCommand;
 
-public class EditBoardCommandValidator : AbstractValidator<EditBoardCommand>
+public class EditBoardCommandValidator : AbstractValidator<UpdateBoardCommand>
 {
     public EditBoardCommandValidator()
     {
